@@ -1,0 +1,296 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coníferas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div data-bs-theme="dark">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mundo das Coníferas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                        
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Sobre Coníferas
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#"
+                                            onclick="setSearchValue('Classificação')">Classificação</a></li>
+                                    <li><a class="dropdown-item" href="#"
+                                            onclick="setSearchValue('Exemplos de árvores')">Exemplos de árvores</a></li>
+                                    <li><a class="dropdown-item" href="#"
+                                            onclick="setSearchValue('Habitat')">Habitat</a></li>
+                                    <li><a class="dropdown-item" href="#"
+                                            onclick="setSearchValue('Importância ecológica')">Importância ecológica</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"
+                                            onclick="setSearchValue('Usos na madeira')">Usos na madeira</a></li>
+                                    <li><a class="dropdown-item" href="#"
+                                            onclick="setSearchValue('Curiosidades')">Curiosidades</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                        <form class="d-flex mt-3" role="search" onsubmit="searchTheme(event)">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Procurar"
+                                aria-label="Search">
+                            <button class="btn btn-success" type="submit">Procurar</button>
+                        </form>
+                        <div id="searchResult" class="text-white mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+
+        function setSearchValue(value) {
+            // Preenche o campo de pesquisa com o valor clicado
+            document.getElementById("searchInput").value = value;
+        }
+
+        const themes = [
+            { term: "Classificação", description: "Coníferas são plantas gimnospermas." },
+            { term: "Exemplos de árvores", description: "Exemplos incluem pinheiros, abetos e cedros." },
+            { term: "habitat", description: "Habitat típico: florestas temperadas e boreais." },
+            { term: "Importância ecológica", description: "Coníferas são fundamentais para o equilíbrio ambiental." },
+            { term: "Usos na madeira", description: "Utilizadas amplamente na produção de papel e móveis." },
+            { term: "curiosidades", description: "Sabia que as coníferas produzem pinhas para reprodução?" },
+        ];
+
+        function searchTheme(event) {
+            event.preventDefault(); // Previne a submissão padrão do formulário
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const resultDiv = document.getElementById("searchResult");
+            const result = themes.find(theme => theme.term.toLowerCase() === searchInput);
+
+            if (result) {
+                resultDiv.textContent = `Tema encontrado: ${result.description}`;
+            } else {
+                resultDiv.textContent = "Nenhum tema encontrado.";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-theme="light">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/wallhaven-4g3gde.jpg" class="d-block w-100" height="600" width="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Parque Nacional de Yellowstone (Estados Unidos)</h5>
+                    <p>Localizado principalmente no estado de Wyoming, é famoso por suas florestas de coníferas,
+                        gêiseres, e rica fauna, como ursos, lobos e bisões. É considerado o primeiro parque nacional do
+                        mundo e abriga paisagens que variam de montanhas a vastos campos de pinheiros.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/wallhaven-flo3.jpg" class="d-block w-100" height="600" width="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Reserva da Biosfera de Gran Paradiso (Itália)</h5>
+                    <p>Situada nos Alpes italianos, essa reserva é composta por densas florestas de coníferas,
+                        especialmente larícios e abetos. Originalmente uma área de proteção para cabras montesas, hoje
+                        preserva também a flora alpina típica e atrai visitantes para trilhas e pesquisas científicas.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/wallhaven-vmg8zp.jpg" class="d-block w-100" height="600" width="500" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Parque Nacional de Banff (Canadá)</h5>
+                    <p>Localizado nas Montanhas Rochosas canadenses, é conhecido por suas florestas de pinheiros, lagos
+                        de águas cristalinas e picos cobertos de neve. É um local popular para o ecoturismo, oferecendo
+                        um dos maiores exemplos de preservação do bioma de coníferas nas Américas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+    <!-- Tema escuro novamente -->
+    <div data-bs-theme="dark" class="pt-3 bg-dark">
+        <h1 class="text-center text-white">O Maravilhoso Mundo das Coníferas e Seus Biomas</h1>
+
+        <p class="text-white" style="padding: 20px;">As coníferas são plantas que pertencem à classe das gimnospermas,
+            ou seja, são plantas que produzem sementes expostas, sem a proteção de um fruto. São árvores e arbustos que
+            possuem folhas em forma de agulhas ou escamas, adaptadas para sobreviver em climas mais frios e secos. Elas
+            têm uma característica marcante: produzem cones (estruturas reprodutivas), que podem ser masculinos ou
+            femininos, e são, muitas vezes, responsáveis pela produção de sementes que irão germinar em novos pés de
+            coníferas.
+
+            Essas plantas são fundamentais em muitos ecossistemas ao redor do mundo, especialmente em regiões frias,
+            como as florestas boreais (também chamadas de taiga), que se estendem por grandes áreas da América do Norte,
+            Europa e Ásia. Nesses biomas, as coníferas dominam a vegetação, criando paisagens de grande beleza e
+            imponência. As árvores como pinheiros, abetos e cedros são exemplos típicos de coníferas.
+
+            Os biomas dominados por coníferas são incríveis pela sua riqueza natural e pela harmonia entre as espécies
+            que habitam esses locais. Além de serem extremamente belas, essas florestas desempenham papéis essenciais no
+            equilíbrio ecológico, como a manutenção do clima e a conservação da biodiversidade. No inverno, as florestas
+            de coníferas formam cenários espetaculares com neve cobrindo seus galhos e cones, criando um espetáculo
+            visual que atrai admiradores de todo o mundo.
+
+            Assim, as coníferas e os biomas onde elas predominam são exemplos impressionantes de resiliência e beleza,
+            mostrando como a natureza consegue se adaptar às mais diversas condições ambientais.</p>
+
+
+        <div>
+            <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading1">Climas Frios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading2">Carbono Global</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading3">Redor do Mundo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading4">O Mistério dos Cones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading5">Coníferas na Fauna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading6">Madeira e Resinas</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Content -->
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+                data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0"
+                style="max-height: 300px; overflow-y: auto;">
+                <h4 id="scrollspyHeading1" class="text-white">1. A Adaptabilidade das Coníferas em Climas Frios</h4>
+                <p class="text-white">As coníferas são conhecidas por sua incrível capacidade de se adaptar a climas
+                    rigorosos, como as regiões frias da Terra. Suas folhas em forma de agulhas minimizam a perda de
+                    água, permitindo que essas plantas sobrevivam mesmo em locais onde a água é escassa ou congelada por
+                    boa parte do ano. Além disso, as coníferas possuem uma casca espessa que as protege de temperaturas
+                    extremas. Estudar como essas plantas se adaptam ao frio ajuda os cientistas a entender melhor como
+                    outras espécies podem sobreviver às mudanças climáticas.</p>
+
+                <h4 id="scrollspyHeading2" class="text-white">2. O Papel das Coníferas no Ciclo de Carbono Global</h4>
+                <p class="text-white">As coníferas desempenham um papel crucial na absorção de dióxido de carbono (CO2)
+                    da atmosfera, ajudando a regular o clima do planeta. Como árvores de grande porte e de crescimento
+                    relativamente rápido, elas são grandes sequestradoras de carbono. Suas florestas, como as da taiga,
+                    armazenam enormes quantidades de carbono em suas árvores e solo, ajudando a mitigar os efeitos do
+                    aquecimento global. Entender o papel das coníferas no ciclo do carbono é vital para os esforços de
+                    combate às mudanças climáticas.</p>
+
+                <h4 id="scrollspyHeading3" class="text-white">3. A Diversidade de Espécies de Coníferas ao Redor do
+                    Mundo</h4>
+                <p class="text-white">Embora as coníferas sejam mais associadas a regiões frias e montanhosas, elas
+                    estão presentes em uma enorme variedade de ecossistemas ao redor do mundo, desde as florestas
+                    temperadas até as subtropicais. Algumas espécies de coníferas, como o pinheiro-bravo e o cedro, são
+                    encontradas em áreas quentes e secas, enquanto outras, como o abeto e o pinheiro-do-alasca,
+                    prosperam em regiões mais geladas. O estudo dessa diversidade de espécies oferece uma visão
+                    fascinante de como as coníferas se adaptam a diferentes ambientes e contribuem para a riqueza
+                    biológica do planeta.</p>
+
+                <h4 id="scrollspyHeading4" class="text-white">4. A Reprodução das Coníferas: O Mistério dos Cones</h4>
+                <p class="text-white">Embora as coníferas sejam mais associadas a regiões frias e montanhosas, elas
+                    estão presentes em uma enorme variedade de ecossistemas ao redor do mundo, desde as florestas
+                    temperadas até as subtropicais. Algumas espécies de coníferas, como o pinheiro-bravo e o cedro, são
+                    encontradas em áreas quentes e secas, enquanto outras, como o abeto e o pinheiro-do-alasca,
+                    prosperam em regiões mais geladas. O estudo dessa diversidade de espécies oferece uma visão
+                    fascinante de como as coníferas se adaptam a diferentes ambientes e contribuem para a riqueza
+                    biológica do planeta.</p>
+
+                <h4 id="scrollspyHeading5" class="text-white">5. A Influência das Coníferas na Fauna</h4>
+                <p class="text-white">As florestas de coníferas não apenas abrigam uma grande diversidade de plantas,
+                    mas também desempenham um papel crucial na manutenção da fauna. Espécies como alces, veados e aves
+                    como o pica-pau dependem das árvores de coníferas para alimentação, abrigo e reprodução. Além disso,
+                    as coníferas oferecem uma grande variedade de habitats, com suas copas densas e solos ricos em
+                    matéria orgânica. O impacto das coníferas sobre a fauna é vital para os ecossistemas que elas
+                    sustentam e sua biodiversidade.</p>
+
+                <h4 id="scrollspyHeading6" class="text-white">6. A Importância Econômica das Coníferas: Madeira e
+                    Resinas</h4>
+                <p class="text-white">As coníferas são de grande importância econômica devido à madeira e às resinas que
+                    produzem. A madeira de pinheiros, abetos e cedros é amplamente utilizada na construção civil,
+                    fabricação de móveis e papel, devido à sua leveza, resistência e facilidade de processamento. Além
+                    disso, as resinas extraídas dessas árvores têm diversos usos, desde a produção de óleos essenciais
+                    até o uso na indústria química e farmacêutica. Estudar a importância econômica das coníferas pode
+                    oferecer insights sobre como gerir esses recursos de maneira sustentável e garantir o equilíbrio
+                    ecológico.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-body">
+                <h5 class="card-title">Criado por</h5>
+                <p class="card-text">Leonardo de Oliveira Prado</p>
+                <a href="#" class="btn btn-primary">Vá para o topo</a>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

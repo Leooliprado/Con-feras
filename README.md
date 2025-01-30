@@ -12,7 +12,7 @@ Este é um site simples criado com o objetivo de aprender e praticar o uso do **
 
 ## 📷 Captura de Tela
 
-![Preview do site](https://via.placeholder.com/800x400?text=Preview+do+site)
+![Preview do site](https://raw.githubusercontent.com/Leooliprado/Coniferas/refs/heads/main/img/img-do-site.png)
 
 ## 🛠️ Tecnologias Utilizadas
 
